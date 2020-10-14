@@ -6,7 +6,7 @@
 
     <div id="main-cal">
       <div id="input-div">
-        <input id="input-string" @input='input' :value='calString'><br>
+        <input id="input-string" v-model='calString'><br>
         <button @click="append('+')">+</button>
         <button @click="append('-')">-</button>
         <button @click="append('*')">*</button>
@@ -40,9 +40,6 @@ export default {
     }
   },
   methods:{
-    input($evt){
-        this.calString = $evt.target.value
-    },
     append(value){
       this.calString += value.toString()
     },
